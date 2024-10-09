@@ -48,3 +48,10 @@ float_data_2 = 7.5
 string_data_cast = str(float_data_2)
 integer_data_cast = int(float_data_2) # The value will become 7
 bool_data_cast = bool(float_data_2)
+
+# Input
+
+is_married = input("have you ever been married ? [1 = yes, 0 = no]")
+is_married = bool(int(is_married))
+
+print(is_married)

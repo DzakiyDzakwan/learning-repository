@@ -148,3 +148,14 @@ string_data_cast = str(float_data_2)
 integer_data_cast = int(float_data_2) # Integer will floor round, the value will become 7
 bool_data_cast = bool(float_data_2)
 ```
+
+### Input
+
+To get input from user you can use `input()`, every input stored as string data. If you want use input data for another data type, you need to cast the string type into anothe type. Example :
+
+```
+is_married = input("have you ever been married ? [1 = yes, 0 = no]")
+is_married = bool(int(is_married))
+
+print(is_married)
+```
