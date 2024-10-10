@@ -6,6 +6,16 @@ This folder contains materials for learning python
 
 - How to install python
 - How to run python program
+- How to run python program
+- Basic python
+  - Introduction
+  - Compiling Program
+  - Variables
+  - Data Type
+  - Type Annotation
+  - Data Type Casting
+  - Input
+  - Operation
 
 ## How to Install Python
 
@@ -169,3 +179,101 @@ is_married = bool(int(is_married))
 
 print(is_married)
 ```
+
+### Operation
+
+1. Aritmethic Operation
+
+```
+a = 6
+b = 2
+
+print(a + b) # Addition
+print(a - b) # Subtraction
+print(a * b) # Multiplication
+print(a / b) # Division
+print(a % b) # Modulo
+print(a ** b) # Exponentiation
+print(a // b) # Floor Division
+```
+
+2. Comparison Operator
+
+```
+a = 2
+b = 3
+
+print(a, ">", b, "=", a > b) # Greater than
+print(a, "<", b, "=", a < b) # Less than
+print(a, ">=", b, "=", a >= b) # Greater than or Equal to
+print(a, "<=", b, "=", a <= b) # Less than or Equal to
+print(a, "==", b, "=", a == b) # Equal to
+print(a, "!=", b, "=", a != b) # Not Equal to
+```
+
+3. Object Identity Operator
+
+this operator is used to compare the identity of two objects, i.e., whether they refer to the same memory location.
+
+```
+c = 5
+d = 5
+e = d
+
+
+print("c = ", c, " id = ", hex(c))
+print("d = ", d, " id = ", hex(d))
+
+print("c is d = ", c is d)
+print("c is not d = ", c is not d)
+```
+
+`c` and `d` is the same object in memory
+`c` and `e` or `d` and `e` is not the same object altough they have same value
+
+4. Logical Operator
+
+```
+x = True
+y = False
+
+print("X and Y = ", x and y) # And Operator
+print("X or Y", x or y) # Or Operator
+print("Negation X and Y = ", not(x and y))
+
+```
+
+5. Bitwise Operator
+
+   Bitwise operators are used to perform bit-level operations on integers. These operators treat the numbers as a sequence of bits (binary representation) and perform operations directly on these bits.
+
+   - AND Operator `&`
+     Sets each bit to 1 if both bits are 1
+
+   - OR Operator `|`
+     Sets each bit to 1 if one of two bits is 1
+
+   - XOR Operator `^`
+     Sets each bit to 1 if only one of two bits is 1
+
+   - NOT Operator `~`
+     Inverts all the bits
+
+   - Zero Fill Left Shift
+     Shift left by pushing zeros in from the right and let the leftmost bits fall off
+
+   - Signed Right Shift
+     Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+
+### Assignment Operator
+
+- `x += 3`, is equal to `x = x + 3`
+- `x -= 3`, is equal to `x = x - 3`
+- `x *= 3`, is equal to `x = x * 3`
+- `x /= 3`, is equal to `x = x / 3`
+
+Assignment operator also can be applied with bitwise operator
+
+- `x &= 3`, is equal to `x = x & 3`
+- `x |= 3`, is equal to `x = x | 3`
+- `x ^= 3`, is equal to `x = x ^ 3`
