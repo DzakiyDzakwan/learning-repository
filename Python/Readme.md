@@ -137,6 +137,16 @@ double_data = c_double(3.14)
 print("data : ", double_data, "type : ", type(double_data))
 ```
 
+### Type Annotation
+
+In pyhton you can declare variable with type annotation to specify the expected data type of variables, function, arguments, and return value.
+
+```
+name: str = "Dzakiy Dzakwan"
+age: int = 22
+is_student: bool = True
+```
+
 ### Data Type Casting
 
 ```
