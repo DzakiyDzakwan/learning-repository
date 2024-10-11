@@ -98,3 +98,28 @@ hexadecimal = hex(angka)
 print(binary)
 print(octal)
 print(hexadecimal)
+
+## Date and Time
+import datetime as dt
+
+### Get now time
+this_time = dt.datetime.now()
+
+print(f"waktu saat ini adalah {this_time}")
+
+### Get today date
+today = dt.date.today()
+
+print(f"tanggal hari ini adalah {today}")
+print(f"hari ini adalah {today:%A}")
+print(f"bulan hari ini adalah {today:%B}")
+print(f"tahun hari ini adalah {today:%Y}")
+
+
+### Create a Date
+new_date = dt.date(2002, 12, 1)
+
+print(f"tanggal kemarin adalah {new_date}")
+print(f"hari kemarin adalah {new_date:%A}")
+print(f"bulan hari kemarin adalah {new_date:%B}")
+print(f"tahun hari kemarin adalah {new_date:%Y}")

@@ -6,7 +6,6 @@ This folder contains materials for learning python
 
 - How to install python
 - How to run python program
-- How to run python program
 - Basic python
   - Introduction
   - Compiling Program
@@ -440,4 +439,47 @@ hexadecimal = hex(angka)
 print(binary)
 print(octal)
 print(hexadecimal)
+```
+
+### Date and Time
+
+To manipulate date and time you need a package called datetime, the first thing you need is to import the package
+
+```
+import datetime as dt
+```
+
+- Get time now
+
+```
+now = dt.datetime.now()
+```
+
+- Get today
+
+```
+today - dt.date.today()
+```
+
+- Create Custom Date
+
+```
+custom_date = dt.date(year, month, day)
+```
+
+- String Format Time
+
+```
+today = dt.date.now()
+
+today.strftime("%Y") # get year
+today.strftime("%B") # get month
+today.strftime("%d") # get day
+today.strftime("%A") # get weekday
+```
+
+or you can use string format like this
+
+```
+print(f"Today {today:%A}, {today.day} {today:%B} {today:%Y}")
 ```
