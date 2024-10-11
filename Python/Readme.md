@@ -6,7 +6,6 @@ This folder contains materials for learning python
 
 - How to install python
 - How to run python program
-- How to run python program
 - Basic python
   - Introduction
   - Compiling Program
@@ -180,7 +179,7 @@ is_married = bool(int(is_married))
 print(is_married)
 ```
 
-### Operation
+### Operators
 
 1. Aritmethic Operation
 
@@ -265,7 +264,7 @@ print("Negation X and Y = ", not(x and y))
    - Signed Right Shift
      Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
 
-### Assignment Operator
+6. Assignment Operator
 
 - `x += 3`, is equal to `x = x + 3`
 - `x -= 3`, is equal to `x = x - 3`
@@ -277,3 +276,210 @@ Assignment operator also can be applied with bitwise operator
 - `x &= 3`, is equal to `x = x & 3`
 - `x |= 3`, is equal to `x = x | 3`
 - `x ^= 3`, is equal to `x = x ^ 3`
+
+### String
+
+1. Create a String
+   To Create a String you can use `'` and `"`. But you can make multiline string using `"""`
+
+   ```
+   kalimat_1 = 'this is a string with single quote'
+
+   kalimat_2 = 'this is a string with double quote'
+
+   kalimat_3 = """
+      Here is
+      a multiline
+      string
+   """
+   ```
+
+2. Backlash Character
+
+- `\'` Single Quote
+- `\"` Double Quote
+- `\n` New Line
+- `\t` Tab
+- `\b` Backspace
+- `\\` Backslash
+
+If you want to make Backslash as string character you can use raw string
+
+```
+kalimat = r"D:\Application\Projects\Python"
+```
+
+3. String Manipulation
+
+- Check if there is character or string inside another string
+
+```
+string = "Hello World"
+print("Hello" in string)
+```
+
+- Check if there is no character or string inside another string
+
+```
+string = "Hello World"
+print("Hello" not in string)
+```
+
+- Repeat a String
+
+```
+string = "wk"*5 # Result wkwkwkwkwk
+```
+
+- indexing
+
+```
+string = "abcde"
+
+# taking character from front
+print(string[0]) # a
+print(string[1]) # b
+
+# taking character from behind
+print(string[-1]) # e
+print(string[-2]) # d
+
+# taking character from index 0 - 3
+print(string[0:3]) # abc
+```
+
+- Min and Max
+
+Min and Max on string is used to take a lowest ascii number (min) and highest ascii number (max) for character in a string
+
+```
+string = "abclmnxyz"
+
+max(string) # z, is the highest
+min(string) # a, is the lowest
+```
+
+- Count
+
+Count is used to count how many character or word on a string
+
+```
+string = "abada"
+
+print(string.count("a")) # There is 3 a in string
+
+```
+
+- Lower and Upper
+  lower() and upper() is a method to change a string into lowercase or uppercase
+
+```
+string = "Sigma"
+
+print(string.lower()) # the result become, sigma
+print(string.upper()) # the result become, SIGMA
+```
+
+to check if a string is an uppercase or lowercase you can use `islower()` and `isupper()`
+
+another method are
+
+1. `isalpha()`,to check a string only contains alphabet
+2. `isalnum()`, to check a string contains alphabet and number
+3. `isdecimal()`, to check a string only contains number
+4. `isspace()`, to check a string contains space, tab, newline
+5. `istitle()`, to check a string start with capital word
+
+- Allocation String
+
+1. `rjust()`
+2. `ljust()`
+3. `center()`
+
+4. Format String a.k.a String Literal
+   you can use f before `f""` like this to create a format string, it's the same like raw string `r""`
+
+```
+nama = "Dzakiy"
+print(f"Halo selamat datang {nama}")
+```
+
+You can show float number, showing negative or positve and percentage
+
+```
+float_number = 10.0754
+print(f"Decimal Number : {float_number:.2f}") # 2 number behind coma
+print(f"Decimal Number : {float_number:.1f}") # 1 number behind coma
+```
+
+```
+positive_number = +10
+negative_number = -5
+
+print(f"positive number : {positive_number:+}")
+print(f"negative number : {negative_number:+d}")
+```
+
+```
+percentage_number = 0.10
+print(f"persentase : {percentage_number:%}")
+```
+
+5. Number System
+
+You can change number system from octal into binary or hexadecimal
+
+```
+angka = 10
+
+binary = bin(angka)
+octal = oct(angka)
+hexadecimal = hex(angka)
+
+print(binary)
+print(octal)
+print(hexadecimal)
+```
+
+### Date and Time
+
+To manipulate date and time you need a package called datetime, the first thing you need is to import the package
+
+```
+import datetime as dt
+```
+
+- Get time now
+
+```
+now = dt.datetime.now()
+```
+
+- Get today
+
+```
+today - dt.date.today()
+```
+
+- Create Custom Date
+
+```
+custom_date = dt.date(year, month, day)
+```
+
+- String Format Time
+
+```
+today = dt.date.now()
+
+today.strftime("%Y") # get year
+today.strftime("%B") # get month
+today.strftime("%d") # get day
+today.strftime("%A") # get weekday
+```
+
+or you can use string format like this
+
+```
+print(f"Today {today:%A}, {today.day} {today:%B} {today:%Y}")
+```
