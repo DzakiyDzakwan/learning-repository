@@ -441,7 +441,7 @@ print(octal)
 print(hexadecimal)
 ```
 
-### Date and Time
+6. Date and Time
 
 To manipulate date and time you need a package called datetime, the first thing you need is to import the package
 
@@ -482,4 +482,102 @@ or you can use string format like this
 
 ```
 print(f"Today {today:%A}, {today.day} {today:%B} {today:%Y}")
+```
+
+### Conditions Statement
+
+```
+if <condition> :
+  <action>
+elif <condition2> :
+  <action 2>
+else
+  <else action>
+```
+
+example :
+
+```
+a = 5
+b = 6
+
+if(a > b) :
+  print(f"{a} is higher then {b}")
+else :
+  print(f"{a} is lower then {b}")
+```
+
+in python there is no curly bracket `{}` in if statement. So to make a difference between if statement to next line is with identation. And if you only have 1 action to do in each statement you can create if statement in 1 line. This only work for if else statement and not working for i elif else statement
+
+```
+<action> if <condition> else <else_condition>
+```
+
+you can use pass to pass the action in statement like this
+
+```
+if 1 > 5 :
+  pass
+elif 1 = 5:
+  print("congratulation")
+else:
+  print("too bad")
+```
+
+### For Statement
+
+1. For Loop
+
+```
+for i in range(10) :
+    print(f"index-{i}")
+```
+
+Looping with list
+
+```
+numbers = [2, 4, 6, 8, 10]
+
+for i in numbers:
+    print(f"number-{i}")
+
+number = 10
+```
+
+2. While Loop
+
+```
+while(number > 0) :
+    print(number)
+    number -= 1
+
+number = 1
+```
+
+### Break, Pass and Continue
+
+1. `break` will exit loop entirely
+
+```
+for i in range(5)
+  if i / 5 == 0 :
+    break # it will break the loop if i is 5
+```
+
+2. `pass` will does nothing, act as a placeholder
+
+```
+for i in range(5)
+  if i / 5 == 0 :
+    pass # it will does nothing if i is 5
+```
+
+3. `continue` will skips the rest of the current iteration and proceeds to the next
+
+```
+for i in range(5)
+  if i / 5 == 0 :
+    continue # it will continue to the next iteration without executing below code
+
+  print("this text will not showing if i is 5")
 ```
