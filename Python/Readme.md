@@ -581,3 +581,180 @@ for i in range(5)
 
   print("this text will not showing if i is 5")
 ```
+
+### List
+
+List is array data type for python
+
+```
+numbers = [1, 2, 3, 4, 5, 6]
+
+strings = ['ucup', 'otong', 'odin']
+
+booleans = [True, False, True, True]
+
+mixes = [1, "ucup", True, "udin", False]
+```
+
+or you can create list with list() like this
+
+```
+array = list([1,2,3,4,5])
+```
+
+alternative way to create list is using loop or range
+
+```
+list_range = list(range(1, 11, 1)) # range (start, stop, step)
+```
+
+```
+list_for = [i*2 for i in range(1, 6)] #[1, 4, 6, 8, 10 ]
+```
+
+you can add if to in for loop list
+
+```
+list_for_if = [i**2 for i in range(1, 6) if i % 2 != 1 ] #[4, 16]
+```
+
+same like string you can acess list value using index
+
+```
+list = ["a", "b", "c", "d", "e"]
+print(list[0]) # get the first value of array (a)
+print(list[-1]) # get the last value of array (e)
+```
+
+#### List Manipulation
+
+1. len()
+
+return the length of array
+
+```
+list = ["a", "b", "c", "d", "e"]
+
+print(len(list)) # the lenght of array is 5
+```
+
+2. insert()
+   adding a new data to the list with selected position
+
+```
+list = ["a", "b", "c", "d", "e"]
+
+list.insert(1, 'f') # ["a", "f", "b", "c", "d", "e"]
+```
+
+3. append()
+   adding a new data to the list on the last position
+
+```
+list = ["a", "b", "c", "d", "e"]
+
+list.append('f') # ["a", "b", "c", "d", "e", "f"]
+```
+
+4. extend()
+   extend list with another list
+
+```
+list = ["a", "b", "c", "d", "e"]
+list2 = ["f", "g"]
+
+list.extend(list2) # ["a", "b", "c", "d", "e", "f", "g"]
+```
+
+5. remove()
+   to remove selected data
+
+```
+list = ["a", "b", "c", "d", "e"]
+
+list.remove("c") # ["a", "b", "d", "e"]
+```
+
+6. sort()
+   to sort list data value
+
+```
+list = ["e", "d", "a", "b", "e"]
+
+list.sort() # ["a", "b", "c", "d", "e"]
+```
+
+7. reverse()
+   to reverse data in list
+
+```
+list = ["a", "b", "c", "d", "e"]
+
+list.reverse() # ["e", "d", "c", "b", "a"]
+```
+
+### Copy List
+
+To copy a list in python you cant do like this
+
+```
+a = ["a", "b", "c", "d", "e"]
+b = a
+
+# if i change a value from list b
+
+b[1] = "f"
+
+this will change both of list a and list b
+
+a = ["a", "f", "c", "d", "e"]
+b = ["a", "f", "c", "d", "e"]
+```
+
+this case happen because data from list b and list a has the same memory address. So to copy a list you need to use `copy` method like this
+
+```
+a = ["a", "b", "c", "d", "e"]
+
+b = a.copy()
+
+b[1] = "f"
+
+a = ["a", "b", "c", "d", "e"]
+b = ["a", "f", "c", "d", "e"]
+```
+
+`copy` method will make a new array with the same value and difference memory address
+
+### Nested List / Multi Dimensional List
+
+```
+list_2d = ["a", "f", "c", "d", "e"]
+list_3d = [["a", 1], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+```
+
+In Multidimensional List you cant use copy() method to copy a list, Because it will only copy the first dimension list. But the second dimension it will not change the memory address
+
+```
+a = [["a", 1], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+b = a.copy()
+
+b[0][1] = [3]
+
+a = [["a", 3], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+b = [["a", 3], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+```
+
+You need a deepcopy method from copy package to copy a multidimensional list
+
+```
+from copy import deepcopy
+
+a = [["a", 1], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+b = deepcopy(a)
+
+b[0][1] = [3]
+
+a = [["a", 1], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+b = [["a", 3], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+```
