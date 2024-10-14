@@ -584,7 +584,7 @@ for i in range(5)
 
 ### List
 
-List is array data type for python
+List is 1 of 4 collection data type from python. List is like an array in another programming language
 
 ```
 numbers = [1, 2, 3, 4, 5, 6]
@@ -693,7 +693,18 @@ list = ["a", "b", "c", "d", "e"]
 list.reverse() # ["e", "d", "c", "b", "a"]
 ```
 
-### Copy List
+8. enumerate()
+
+enumarate are a method you can use to get index and value of a list
+
+```
+list = ["a", "b", "c", "d", "e"]
+
+for index, item in enumerate(list) :
+  print(f"{index}- {item}")
+```
+
+#### Copy List
 
 To copy a list in python you cant do like this
 
@@ -726,7 +737,7 @@ b = ["a", "f", "c", "d", "e"]
 
 `copy` method will make a new array with the same value and difference memory address
 
-### Nested List / Multi Dimensional List
+#### Nested List / Multi Dimensional List
 
 ```
 list_2d = ["a", "f", "c", "d", "e"]
@@ -757,4 +768,187 @@ b[0][1] = [3]
 
 a = [["a", 1], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
 b = [["a", 3], ["b", 2], ["c", 3], ["d", 4], ["e", 5]]
+```
+
+### Tuple
+
+Tuple is 2 of 4 collection data type from python. Tuple is immutable, that means the value in tuples cant be change. Or the easy explanation tuple is constant collection
+
+```
+tuples = ("udin", "mulyono", "jono")
+
+tuples2 = tuple("udin", "mulyono", "jono")
+```
+
+Like a list, tupple can be acessed using index
+
+```
+tuples = ("udin", "mulyono", "jono")
+
+print(tuples[1]) # mulyono
+```
+
+tuple can contains different data type like list
+
+### Set
+
+Set is 3 of 4 collection data type from python, set is unordered and no indexable. Set is usefull if you want to have a unique collection.
+
+```
+sets = {1, 3, 5, 7, 9}
+
+sets2 = set(1, 3, 5, 7, 9)
+```
+
+set cannot accessed using index like list and tuple
+
+### Dictionary
+
+Dictionary is 4 of 4 collection data type from python, dictionary store data in key-value pairs. Dictionary is like object data type from javascript
+
+```
+dictionaries = {
+  key : value,
+  key2 : value2
+}
+```
+
+to access data from the dictionary you can call the key as an index like this
+
+```
+dictionaries = {
+  "key" : "value",
+  "key2" : "value2"
+}
+
+print(dictionaries['key2']) # it return value 2
+```
+
+or you can use get method to get the value from dictionary. the difference between using index key and get method is with using get you can handle the error like this
+
+```
+dictionaries = {
+  "key" : "value",
+  "key2" : "value2"
+}
+
+dictionaries.get('key3', 'key not found') # if key with name key3 not found then it will return 'key not found'
+```
+
+to update dictionary data dictionary has a method called update, update will update an existing key or if the key not exist it will add new key to the dictionary
+
+```
+dictionaries = {
+  "key" : "value",
+  "key2" : "value2"
+}
+
+dictionaries.update({"key3" : "value3"}) # it will add new key-value pair to dictionary cause 'key3' is not exists
+```
+
+to delete data in dictionary you can use this
+
+```
+dictionaries = {
+  "key" : "value",
+  "key2" : "value2",
+  "key3" : "value3"
+}
+
+del dictionaries["key3"] # it will remove "key3" from dictionaries
+```
+
+or you can use `pop()` method to remove a key data from dictionary. You can transfer remove data to another variable like this
+
+```
+dictionaries = {
+  "key" : "value",
+  "key2" : "value2",
+  "key3" : "value3"
+}
+
+new_key2 = dictionaries.pop('key2') # it will remove key 2 from dictionaries but it will save the value of key2 into new_key2
+```
+
+last, the same like list you can copy a dictionary using `copy()` method to make a difference memory address
+
+```
+dictionaries = {
+  "key" : "value",
+  "key2" : "value2",
+  "key3" : "value3"
+}
+
+new_dictionaries = dictionaries.copy()
+
+```
+
+#### Dictionary Loop
+
+1. keys()
+
+`keys()` is a method to get iterable colection of key from dictionary
+
+```
+person = {
+  "name" : "Dzakiy"
+  "age" : 12
+  "address" : "Surabaya"
+}
+
+keys = person.keys()
+
+for key in keys
+  print(key) # it will return all key data
+```
+
+2. values()
+
+`values()` is a method to get iterable collection of value from dictionary
+
+```
+person = {
+  "name" : "Dzakiy"
+  "age" : 12
+  "address" : "Surabaya"
+}
+
+values = person.values()
+
+for value in values
+  print(value) # it will return all key data
+```
+
+3. items()
+
+`items()` is a method to get iterable collection of key and value from dictionary
+
+```
+person = {
+  "name" : "Dzakiy"
+  "age" : 12
+  "address" : "Surabaya"
+}
+
+items = person.items()
+
+for key, value in items
+  print(key, value) # it will return all key, value of data
+```
+
+#### Nested Dictionary
+
+```
+persons = {
+    "P001" : {
+      "name" : "Dzakiy"
+      "age" : 12
+      "address" : "Surabaya"
+    },
+    "P002" : {
+      "name" : "Dzakwan"
+      "age" : 24
+      "address" : "Medan"
+    },
+}
 ```
