@@ -72,12 +72,9 @@ Prints the largest number in the list.
 
 loop_list = []
 
-loop_list.append(int(input("insert number-1 : ")))
-loop_list.append(int(input("insert number-2 : ")))
-loop_list.append(int(input("insert number-3 : ")))
-loop_list.append(int(input("insert number-4 : ")))
-loop_list.append(int(input("insert number-5 : ")))
-
+for i in range(1,6) :
+    loop_list.append(int(input(f"insert number-{i} : ")))
+    
 print(f"your lists : {loop_list}")
 print(f"sum of the number : {sum(loop_list)}")
 print(f"the largest number : {max(loop_list)}")
@@ -98,7 +95,7 @@ Question: Write a program that uses nested loops to print the following pattern:
 """
 
 
-patern_height = int(input("insert the height of patter : "))
+patern_height = int(input("insert the height of pattern : "))
 
 for i in range(patern_height + 1):
     print("*"*i)
