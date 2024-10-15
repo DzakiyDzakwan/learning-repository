@@ -952,3 +952,103 @@ persons = {
     },
 }
 ```
+
+### Function
+
+```
+def <function_name>(argument) :
+  # expression here
+```
+
+example
+
+```
+def greet_parameter(name: str) :
+    print(f"Hello {name} welcome to function course")
+```
+
+example of function with many returns
+
+```
+## Function with many return
+
+def operator(number1:int, number2:int) :
+    adition = number1 + number2
+    subtraction = number1 - number2
+    multiply = number1 * number2
+
+    return adition, subtraction, multiply
+
+adition, subtraction, multiply = operator(1, 2)
+
+print(adition) # 3
+print(subtraction) # -1
+print(multiply) # 2
+```
+
+#### \*args
+
+`*args` is a way to change an arguments into a tuple inside the function. Example
+
+```
+def sumarize(*numbers) :
+    total = 0
+    for number in numbers :
+        total += number
+
+    return total
+
+print(sumarize(1,3,5,7,9)) # return 25
+print(sumarize(2,4,6,8,10)) # return 30
+```
+
+#### `**kwargs`
+
+`**kwargs` is a keyword argument, this is a way to change an argument into a dictionary. You need to set a keyword when you want insert an argument
+
+```
+def getMember(**member) :
+    print(f"welcome {member['name']}, you have been joined this club since {member['year']}")
+
+getMember(name = "Dzakiy", year = 2008)
+```
+
+### lambda
+
+lambda is a way to create small, anonymous (unnamed) functions. Unlike regular functions defined using def, a lambda function can have any number of arguments but only one expression. The expression is evaluated and returned.
+
+```
+power = lambda parameter: <expression>
+```
+
+Contoh penggunaaan
+
+```
+numbers = [1,2,4,5,9,10]
+
+def is_even(number):
+  return angka % 2 == 0
+
+new_numbers = list(filter(is_even, numbers))
+```
+
+it would be shorter if you using lambda
+
+```
+numbers = [1,2,4,5,9,10]
+
+new_numbers = list(filter(lambda number: angka % 2 == 0, numbers))
+```
+
+Or you can make anonymous function inside another function
+
+```
+def myFunction(n) :
+    return lambda a : a ** n
+
+doubleFunction = myFunction(2)
+tripleFunction = myFunction(3)
+
+print(doubleFunction(4))
+print(tripleFunction(4))
+```
