@@ -1,7 +1,10 @@
-print("Welcome to the rollercoaster!")
-height = int(input("What is your height in cm? "))
+maths_score = 90
+english_score = 70
 
-if height >= 120:
-    print("You can ride the rollercoaster")
-else:
-    print("Sorry you have to grow taller before you can ride.")
+if maths_score >= 90:
+    if english_score >= 90:
+        print("You're good at everything")
+    else:
+        print("You're good at maths")
+if english_score >= 90:
+    print("You're good at english")
