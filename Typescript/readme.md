@@ -179,3 +179,21 @@ class Motorcycle implements Vehicle {
 let someValue: any = "Hello, TypeScript!";
 let strLength: number = (someValue as string).length;
 ```
+
+### Generic Type
+
+Generic type is like a parameter for type, It make type more flexible based type you included in.
+Example :
+
+```
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+```
+
+So you can change identity type dynamically like this
+
+```
+string_type = identity<string>("This is String Type")
+number_type = identity<number>(12)
+```
