@@ -43,3 +43,11 @@ let person_2: Person = {
 
 let someValue: any = "This is a variable with any type";
 let strLength: number = (someValue as string).length;
+
+// Generi type
+
+type ApiResponse<T> = {
+  status: number;
+  message: string;
+  data: T;
+};
