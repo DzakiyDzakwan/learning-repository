@@ -92,8 +92,44 @@ Untuk melihat versi docker yang aktif dapat menggunakan perintah
 - Untuk menghapus volume dapat dihapus dengan menggunakan command
   `docker volume rm <volume_name>`
 
-- Keunutungan menggunakan volume adalah, jika container dihapus maka data akan tetap aman di volume
+- Keuntungan menggunakan volume adalah, jika container dihapus maka data akan tetap aman di volume
 - Cara menghubungkan volume dengan container sama dengan bind mount hanya saja berbeda di type yang menggunakan tipe volume dan source dengan nama volume
   `docker container create --bane <container_name> --mount"type=volume,source=<volume_name>,destination=<container_source>,readonly" <image_name>:<image_tag>`
 
 - Sampai saat ini belum ada cara otomatis untuk melakukan backup volume yang sudah dibuat, berbeda dengan bind mount yang data disimpan didalam sistem host. Namun kita dapat memanfaatkan backup menggunakan container
+
+## Docker Network
+
+- Docker memiliki fitur network yang bisa digunakan untuk membuat jaringan di dalam Docker untuk menghubungkan antar container dengan satu jaringan yang sama
+- Kita perlu menentukan driver yang ingin digunakan ketika membuat network di Docker, namun terkadang ada syarat sebuah driver network baru bisa digunakan. Berikut beberapa tipe driver network yang ada :
+
+1. Bridge, driver yang digunakan untuk membuat network secara virtual
+2. Host, driver yang digunakan untuk membuat network yang sama dengan sistem host. Host hanya jalan di docker linux
+3. None, default driver yang membuat network tidak bisa berkomunikasi
+
+- Untuk melihat list network yang tersedia dapat menggukan command
+  `docker network ls`
+
+- Untuk menghapus network dapat menggukan command
+  `docker network rm <network_name>`
+
+- Untuk menghubungkan container ke network saat membuat container dapat menggunakan command
+  `docker container create --name <container_name> --network <network_name> <image_name>:<tag>`
+
+- Untuk menghubungkan container ke network dapat menggunakan command
+  `docker network connect <network_name> <container_name>`
+
+- Untuk memutuskan hubungan container ke network dapat menggunakan command
+  `docker network disconnect <network_name> <container_name>`
+
+## Docker Inspect
+
+- Docker memiliki fitur bernama inspect agar image, container, volume dan network dapat dilihat secara detail. Docker dapat dijalankan dengan command
+  `docker <image|container|volume|network> <nama>`
+
+## Docker Prune
+- Untuk membersihkan hal hal yang sudah tidak digunkana lagi di Docker seperti container yang sudah di stop, image yang sudah tidak digunakan oleh container maupun volume yang tidak digunakan oleh container. Docker mendukung fitur untuk membersihkan secara otomatis bernama prune. Untuk melakukan prune dapat menggunakan command
+  `docker <image|container|volume|network> prune`
+
+- Lalu untuk menghapus image,container dan network sekaligus dapat menggunakan command
+  `docker system prune`
