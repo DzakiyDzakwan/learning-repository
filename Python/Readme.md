@@ -1075,6 +1075,37 @@ from <module_name> import <specific_function>, <specific_class>
 import <module_name> as <aliases_name>
 ```
 
+### Class
+A Class is a blueprint or a template for creating objects. It defines a set of attributes (data/variables) and methods (functions/behavior) that will characterize any object created from the class.
+
+```
+class Car:
+    # Class Attribute (shared by all instances)
+    is_motorized = True
+
+    # Constructor Method (runs when an object is created)
+    def __init__(self, make, model):
+        # Instance Attributes (unique to each object)
+        self.make = make
+        self.model = model
+        self.speed = 0
+
+    # Instance Method (behavior)
+    def accelerate(self, increment):
+        self.speed += increment
+        return f"The {self.make} is now traveling at {self.speed} km/h."
+
+# Creating an object (instantiation)
+car1 = Car(make="Toyota", model="Corolla")
+
+# Accessing attributes
+print(car1.make) # Output: Toyota
+
+# Calling a method
+print(car1.accelerate(50)) # Output: The Toyota is now traveling at 50 km/h.
+```
+
+
 ## Python GUI
 
 Graphical User Interface (GUI) in Python allows you to create visually appealing and user-friendly applications.
