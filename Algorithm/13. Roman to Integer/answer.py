@@ -22,7 +22,6 @@ class Solution(object):
 
             last_value = self.roman_number[i]
 
-        print(result)
         return result
         
         
