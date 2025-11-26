@@ -12,10 +12,20 @@ class Car():
     def accelerate(self, increment):
         self.speed += increment
         return f"The {self.make} is now traveling at {self.speed} km/h."
+    
+    #Dunder Method, called when logging the objec
+    def __str__(self):
+        return f"{self.make} ({self.model})"
+    
+    def __repr__(self):
+        return f"Car(make:{self.make}, model:{self.model})"
 
 
 # Accessing Class
 first_car = Car(make="Toyota", model="Corolla")
+
+#Accessing Object
+print(first_car)
 
 # Accessing attributes
 print(first_car.make) # Output: Toyota
