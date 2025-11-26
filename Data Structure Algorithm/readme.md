@@ -88,3 +88,23 @@ Arrays are not just theoretical; they underpin many core features in modern soft
 - Game Development: Game maps, especially for grid-based games (like Chess or Tetris), are typically managed using 2D Arrays to track the position and state of objects on the board.
 - Database Management (Internally): While databases use complex structures, the raw data columns in memory or on disk are often managed using contiguous memory blocks, similar to arrays, for fast sequential access.
 - Financial Data: Storing a time series of stock prices or daily sales figures is done efficiently using an array because the data is ordered, and you often need to access the $k$-th element quickly.
+
+## Linked List
+Linked List is a linear data structure, like an Array, but it does not store elements at contiguous memory locations. Instead, it is composed of a sequence of interconnected objects called Nodes.
+
+While the Singly Linked List (only pointing forward) is the most basic, there is 3 type of linked list:
+1. Single Linked List : Node only has pointer to next node. This list can only travel foward
+2. Double Linked List : Each node has a pointer to both the next and the previous node. This allows for traversal in both directions.
+3. Circular Linked List : First of node has previous pointer for the last node. And the last node has next pointer to first node
+
+Linked Lists shine in scenarios where the size of the data structure changes frequently and performance in the middle of the list is crucial.
+- Dynamic Data Management: They are highly efficient when the number of elements is unknown or constantly fluctuating.
+- Implementing Advanced Structures: They are the backbone for implementing:
+    - Stacks and Queues: They offer easy $O(1)$ time complexity for adding/removing from one or both ends.
+    - Adjacency List in Graphs: Each vertex in a graph often uses a Linked List to store its neighbors.
+- Memory Management: Operating systems sometimes use linked lists to manage free and allocated memory blocks.
+
+Linked Lists power features that require fluid, ordered storage:
+- Music/Video Playlists: A playlist is naturally a linked list. Songs are nodes, and the "next song" button simply follows the link to the next node. Insertion or deletion of a song takes $O(1)$ time (if you know the song before it).
+- Browser History/Navigation: The "Back" and "Forward" buttons can be modeled by a Doubly Linked List. Going back means following the previous pointer, and going forward means following the next pointer.
+- Undo Functionality: Editors and graphic design software can use a linked list to store the sequence of user actions. Undoing means moving back one node in the list.
