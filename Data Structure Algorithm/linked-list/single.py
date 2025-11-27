@@ -74,40 +74,70 @@ class SingleLinkedList():
 
     def deleteAt(self, index):
         if index < 0 or index >= self.length():
-            raise ValueError({"message" : 'index is wrong'})
+            raise Exception("Invalid Index")
         
+        if index == 0:
+            self.head = self.head.next
+            return
+
         itr = self.head
         count = 0
 
         while itr.next:
-            if index == 0:
-                self.head = itr.next
-                return
             
-            if count + 1 == index:
+            if count == index-1:
                 itr.next = itr.next.next
-                return
+                break
             
             itr = itr.next
             count += 1
 
     def insertAt(self, value, index):
-        itr = self.head
+        if index<0 or index>=self.length():
+            raise Exception("Invalid Index")
+        
+        if index == 0 :
+            self.head = Node(value, self.head.next)
+            return
+        
         count = 0
+        itr = self.head
         
         while itr:
-            if index == 0 :
-                self.head = Node(value, itr.next)
-                return
-            
-            if index == count + 1:
+            if count == index - 1:
                 itr.next = Node(value, itr.next)
-                return
+                break
 
             itr = itr.next
             count += 1
 
-        ...
+    def insertAfterValue(self, target, value):
+        itr = self.head
+
+        while itr:
+            if itr.value == target:
+                itr.next = Node(value, itr.next.next if itr.next else None)
+                return
+
+            itr = itr.next
+        
+        print("target value not found")
+
+    def deleteValue(self, value):
+        if value == self.head.value:
+            self.head = self.head.next
+            return
+
+        itr = self.head
+
+        while itr.next:
+            if itr.next.value == value:
+                itr.next = itr.next.next
+                return
+            
+            itr = itr.next
+        print("target value not found")
+                
 single = SingleLinkedList()
 
 single.insertFirst(10)
@@ -119,5 +149,7 @@ single.insertList([12,13,14,15])
 single.printList()
 single.deleteAt(6)
 single.printList()
-single.insertAt(10, 0)
+single.insertAfterValue(14, 10.5)
+single.printList()
+single.deleteValue(9)
 single.printList()
