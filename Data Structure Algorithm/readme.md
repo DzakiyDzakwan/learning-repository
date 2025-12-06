@@ -108,3 +108,19 @@ Linked Lists power features that require fluid, ordered storage:
 - Music/Video Playlists: A playlist is naturally a linked list. Songs are nodes, and the "next song" button simply follows the link to the next node. Insertion or deletion of a song takes $O(1)$ time (if you know the song before it).
 - Browser History/Navigation: The "Back" and "Forward" buttons can be modeled by a Doubly Linked List. Going back means following the previous pointer, and going forward means following the next pointer.
 - Undo Functionality: Editors and graphic design software can use a linked list to store the sequence of user actions. Undoing means moving back one node in the list.
+
+## Hashmap
+Hashmap is a data structure that implements an associative array abstract data type. It is used to store collections of key-value pairs. The core idea behind a HashMap is to use a special function, called a hash function, to compute an index, or hash, into an array of buckets or slots, from which the desired value can be retrieved.
+
+How it Works:
+- Key-Value Pair: Every item stored in a HashMap consists of a unique key and its associated value.
+- Hash Function: When you want to insert a key-value pair, the key is passed through the hash function.
+- Hash Code/Index: The hash function returns an integer, which is used as the index (or memory address) where the value is stored in the underlying array (the "buckets").
+- Retrieval: To retrieve a value, the key is passed through the same hash function to immediately calculate the storage index, allowing for very fast lookups.
+
+he core concept of a HashMap is implemented in various forms and programming languages. The key features it implements are that of an efficient associative data structure.
+- Database Indexing
+- Spell Checkers and Dictionaries
+- Caching System
+- Router and DNS resolution
+- Symbol Table in Compiler
