@@ -124,3 +124,37 @@ he core concept of a HashMap is implemented in various forms and programming lan
 - Caching System
 - Router and DNS resolution
 - Symbol Table in Compiler
+
+## Stack
+A Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out)
+
+The LIFO principle means that the last element added to a stack is the first one to be removed.
+- New elements are always pushed on top.
+- Removal (pop) also happens only from the top.
+- This ensures a strict order: last in → first out.
+
+Types of Stack :
+- Fixed Size Stack
+    - A fixed size stack has a predefined capacity.
+    - Once it becomes full, no more elements can be added (this causes overflow).
+    - If the stack is empty and we try to remove an element, it causes underflow.
+    - Typically implemented using a static array.
+
+- Dynamic Size Stack
+    - A dynamic size stack can grow and shrink automatically as needed.
+    - If the stack is full, its capacity expands to allow more elements.
+    - As elements are removed, memory usage can shrink as well.
+    - Can be implemented using `Dynamic Array` and `Linked List`
+
+Common Operations on Stack:
+In order to make manipulations in a stack, there are certain operations provided to us.
+- push() to insert an element into the stack O(1).
+- pop() to remove an element from the stack O(1).
+- top() Returns the top element of the stack O(1).
+- isEmpty() returns true if stack is empty else false O(1).
+- size() returns the size of the stack O(n).
+
+Stack are used for:
+- Undo/Redo Mechanism
+- Browser History
+- Backtracking Algorithm
