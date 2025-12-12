@@ -22,3 +22,10 @@ class DequeStack:
         if self.is_empty():
             raise IndexError("peek from an empty stack")
         return self.stack[-1]
+    
+    def search(self, item):
+        try:
+            index = list(self.stack).index(item)
+            return index
+        except ValueError:
+            return -1

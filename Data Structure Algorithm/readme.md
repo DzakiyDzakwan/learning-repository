@@ -158,3 +158,41 @@ Stack are used for:
 - Undo/Redo Mechanism
 - Browser History
 - Backtracking Algorithm
+
+## Queque
+Queue is a linear data structure that follows FIFO (First In First Out) Principle, so the first element inserted is the first to be popped out.
+
+FIFO Principle states that the first element added to the Queue will be the first one to be removed or processed. So, Queue is like a line of people waiting to purchase tickets, where the first person in line is the first person served. (i.e. First Come First Serve).
+
+Basic Terminologies of Queue
+- Front: Position of the entry in a queue ready to be served, that is, the first entry that will be removed from the queue, is called the front of the queue. It is also referred as the head of the queue.
+- Rear: Position of the last entry in the queue, that is, the one most recently added, is called the rear of the queue. It is also referred as the tail of the queue.
+- Size: Size refers to the current number of elements in the queue.
+- Capacity: Capacity refers to the maximum number of elements the queue can hold.
+
+Type of Queque:
+1. Simple Queque
+A simple queue follows the FIFO (First In, First Out) principle.
+- Insertion is allowed only at the rear (back).
+- Deletion is allowed only from the front.
+- Can be implemented using a linked list or a circular array.
+
+2. Double Ended Queque
+In a deque, insertion and deletion can be performed from both ends.
+
+3. Priority Queque
+A queue where each element is assigned a priority, and deletion always happens based on priority (not just position).
+
+Queue Operations
+- Enqueue: Adds an element to the end (rear) of the queue. If the queue is full, an overflow error occurs.
+- Dequeue: Removes the element from the front of the queue. If the queue is empty, an underflow error occurs.
+- Peek/Front: Returns the element at the front without removing it.
+- Size: Returns the number of elements in the queue.
+- isEmpty: Returns true if the queue is empty, otherwise false.
+- isFull: Returns true if the queue is full, otherwise false.
+
+Queque are used for:
+1. Task Scheduling (Operating Systems): Processes are executed in the order they arrive (First-Come, First-Served).
+2. Ticketing System
+3. Buffering (e.g., streaming media): Data is processed in the order it was received.
+4. Graph Algorithms: Like Breadth-First Search (BFS).
